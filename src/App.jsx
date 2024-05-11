@@ -1,8 +1,16 @@
+import { Suspense } from "react";
+import PrimaryLayout from "./layout/PrimaryLayout";
+import GlobalLoader from "./components/Shared/Loader/GlobalLoader";
+import { SidebarProvider } from "./hooks/SidebarProvider";
+
 const App = () => {
   return (
-    <div className="flex justify-start items-center h-[100vh]">
-      <h1 className="text-2xl text-green-600 font-bold">Hello Popular Travel</h1>
-    </div>
+    <SidebarProvider>
+      <Suspense fallback={<GlobalLoader />}>
+        <PrimaryLayout />
+      </Suspense>
+    </SidebarProvider>
+
   );
 };
 
