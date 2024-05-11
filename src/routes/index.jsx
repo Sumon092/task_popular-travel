@@ -4,6 +4,7 @@ import Home from "../pages/Home";
 import { Suspense } from "react";
 import NotFound from "../pages/NotFound";
 import MasterPrice from "../pages/MasterPrice";
+import CustomPrice from "../pages/CustomPrice";
 
 const routes = createBrowserRouter([
     {
@@ -12,7 +13,8 @@ const routes = createBrowserRouter([
         children: [
             { index: true, element: <Home /> },
             { path: '/home', element: <Home /> },
-            { path: '/master-price', element: <MasterPrice /> }
+            { path: '/master-price', element: <MasterPrice /> },
+            { path: '/custom-price', element: <CustomPrice /> },
         ]
     },
     { path: "*", element: (<Suspense>    <NotFound />  </Suspense>), },

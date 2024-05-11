@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import { Bell, MenuIcon, XIcon } from 'lucide-react';
-import { ProfileIcon } from '../../assets/icons';
+import { Bell, CircleUser, MenuIcon, XIcon } from 'lucide-react';
+// import { ProfileIcon } from '../../assets/icons';
 import { Link, useLocation } from 'react-router-dom';
+import Hr from '../UI/Hr/Hr';
 
 
 const NavBar = () => {
@@ -15,7 +16,7 @@ const NavBar = () => {
     { name: 'Calender', id: 3, link: '/calender' },
     { name: 'Reports', id: 4, link: '/reports' },
     { name: <Bell />, id: 5, link: '/notification' },
-    { name: <ProfileIcon />, id: 6, link: '/profile' },
+    { name: <CircleUser />, id: 6, link: '/profile' },
     ]
     const handleSetActiveRoute = (routeName) => {
         setActiveRouteName(routeName)
@@ -30,10 +31,10 @@ const NavBar = () => {
                     }
                 </div>
 
-                <ul className={`md:flex justify-center items-center md:static w-full absolute h-full duration-500 ease-in bg-primary ${open ? 'top-14 pl-3' : 'top-[-350px] text-white'}`}>
+                <ul className={`md:flex justify-center items-center md:static w-full absolute h-full duration-500 ease-in bg-primary ${open ? 'top-14 pl-3' : 'top-[-550px] text-white'}`}>
                     {
                         routes.map(route =>
-                            <li className='mr-8 py-2 md:py-0' key={route.id}>
+                            <li className='mr-8 py-1 md:py-0' key={route.id}>
                                 <Link
                                     to={route.link}
                                     className={`text-white hover:bg-teal-800 rounded-full px-3 py-1 ${location.pathname === route.link ? 'bg-teal-800 rounded-full' : ''}`}
@@ -48,7 +49,7 @@ const NavBar = () => {
             {activeRouteName === 'Master Price' || activeRouteName === 'Custom Price' ? (
                 <div>
                     <p className="text-center my-2 font-roboto font-bold text-2xl text-black">{activeRouteName}</p>
-                    <hr className='border-t-gray-400' />
+                    <Hr />
                 </div>
 
             ) : null}
