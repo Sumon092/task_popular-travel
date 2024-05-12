@@ -49,7 +49,7 @@ const NavBar = () => {
             {activeRouteName === 'Master Price' || activeRouteName === 'Custom Price' ? (
                 <div>
                     <p className="text-center my-2 font-roboto font-bold text-2xl text-black">{activeRouteName}</p>
-                    <Hr />
+                    <Hr className="!border-t-gray-500" />
                 </div>
 
             ) : null}

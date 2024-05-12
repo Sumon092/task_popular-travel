@@ -1,10 +1,16 @@
 /* eslint-disable react/prop-types */
-const Container = ({ children }) => {
+import { twMerge } from "tailwind-merge";
+
+const Container = ({ children, className }) => {
     return (
-        <div className="max-w-[1536px] mx-[160px] mt-2">
+        <div
+            className={twMerge(
+                "max-w-[1400px] mx-auto px-4 xl:px-24 2xl:px-0",
+                className
+            )}
+        >
             {children}
         </div>
     );
 };
-
 export default Container;
