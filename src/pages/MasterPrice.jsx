@@ -71,7 +71,9 @@ const MasterPrice = () => {
                 </div>
                 <Hr />
             </form>
-            <Table itinerary={Data} />
+            <div className="relative mb-8 overflow-x-auto">
+                <Table itinerary={Data} />
+            </div>
         </>
 
     );
