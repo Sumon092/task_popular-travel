@@ -35,19 +35,17 @@ const Table = ({ itinerary }) => {
         </thead>
         <tbody>
           {Object.entries(groupedOffers).map(([key, flights], index) => {
-            // Split the key to get price and duration
-            const [price, duration] = key.split('_');
-            const isLastGroup = index === Object.keys(groupedOffers).length - 1;
+
+            const [price] = key.split('_');
+
 
             return (
               <React.Fragment key={index}>
                 {/* Render table header for each group */}
-                <tr>
-                  <td colSpan="10">
-                    <h3 className='hidden'>Price: {price} | Duration: {duration}</h3>
-                  </td>
+                <tr className='border border-gray-500'>
+
                 </tr>
-                {flights.map((flight, index) => (
+                {flights.map((flight) => (
                   flight.itineraries[0].segments.map((segment, index) => (
                     <tr key={index}>
                       <td>{segment.marketingCarrier + segment.aircraft}</td>
@@ -57,17 +55,19 @@ const Table = ({ itinerary }) => {
                       <td className='whitespace-nowrap'>{segment.departure.iataCode}-{segment.arrival.iataCode}</td>
                       <td className='whitespace-nowrap'>{segment.departure.at}</td>
                       <td className='whitespace-nowrap'>{segment.arrival.at}</td>
-                      <td>{flight.itineraries[0].duration}</td>
-                      {/* Render price and select button only once */}
+                      {index === 0 ? (
+                        <>
+                          <td>{flight.itineraries[0].duration}</td>
+                        </>
+                      ) : <p className='text-center text-gray-500'>---</p>}
                       {index === 0 && (
                         <>
-                          <td>{price} <Button className="!bg-blue-900 text-white" label={'Select'} /></td>
+                          <td>{price}</td>
                         </>
                       )}
-                      {/* Render '--' if it's the last group and price and duration match */}
-                      {isLastGroup && index === flights.length - 1 && (
+                      {index === 0 && (
                         <>
-                          <td colSpan="8" className="text-center">--</td>
+                          <td><Button label={'Select'} className="!bg-blue-900 text-white" /></td>
                         </>
                       )}
                     </tr>
