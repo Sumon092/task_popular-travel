@@ -6,7 +6,7 @@ import './Table.css';
 const Table = ({ itinerary }) => {
   // Create an object to group flight offers by price and duration
   const groupedOffers = {};
-  itinerary.flightOffer.forEach(flight => {
+  itinerary.flightOffer?.forEach(flight => {
     const price = flight.price;
     const duration = flight.itineraries[0].duration;
     const key = `${price}_${duration}`;

@@ -12,9 +12,11 @@ import Data from '../data/data.json'
 const MasterPrice = () => {
     const [activeButton, setActiveButton] = useState('oneWay');
     const { register, handleSubmit, reset } = useForm()
+    const [data, setData] = useState({})
+    console.log(data)
     const onSubmit = (data) => {
-        // event.preventDefault()
-        console.log('button clicked', data)
+        console.log(data)
+        setData(Data)
         reset()
     }
 
@@ -72,7 +74,7 @@ const MasterPrice = () => {
                 <Hr />
             </form>
             <div className="relative mb-8 overflow-x-auto">
-                <Table itinerary={Data} />
+                <Table itinerary={data} />
             </div>
         </>
 
