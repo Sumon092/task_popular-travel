@@ -28,7 +28,7 @@ const NavBar = () => {
                     {open ? <XIcon /> : <MenuIcon />}
                 </div>
 
-                <ul className={`md:flex justify-center items-center md:static w-full absolute h-full duration-500 ease-in bg-primary ${open ? 'top-14 pl-3' : 'top-[-550px] text-white md:pl-24'}`}>
+                <ul className={`bg-primary md:flex justify-center items-center md:static w-full absolute h-full duration-500 ease-in  ${open ? 'top-14 pl-3 bg-primary' : 'top-[-550px] text-white md:pl-24'}`}>
                     {routes.slice(0, 5).map(route => (
                         <li className='mr-4 py-1 md:py-0' key={route.id}>
                             <Link

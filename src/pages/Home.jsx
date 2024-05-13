@@ -32,10 +32,10 @@ const parallax = {
 const Home = ({ className }) => {
     return (
         <Container className={twMerge(
-            'xl:px-0 px-0 h-[80vh] max-w-full mb-24',
+            'xl:px-0 px-0 h-[80vh] max-w-full lg:mb-24 mb:96',
             className
         )}>
-            <div style={{ background: `url(${Background})`, backgroundRepeat: "no-repeat", backgroundSize: 'cover' }} className="h-full w-full">
+            <div style={{ background: `url(${Background})`, backgroundRepeat: "no-repeat", backgroundSize: 'cover' }} className="w-full h-full">
                 <div>
                     <motion.div className="px-8 lg:px-24"
 
