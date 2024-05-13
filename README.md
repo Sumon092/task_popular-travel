@@ -1,11 +1,12 @@
 ## Project live link : [popular_travel](https://popular-travel.netlify.app/)
 
-1.
-
 ## How to run the project ?
+
+1.
 
 - Clone the repo first : git clone https://github.com/Sumon092/task_popular-travel.git
 - cd project_name
+- npm install
 - npm run dev
 
 2. I have taken 3 day's, but I have worked this project when I was free from office work and night time. It takes several hours only total.
