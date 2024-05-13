@@ -1,10 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
-import Home from "../pages/Home";
 import { Suspense } from "react";
 import NotFound from "../pages/NotFound";
 import MasterPrice from "../pages/MasterPrice";
 import CustomPrice from "../pages/CustomPrice";
+import Home from "../pages/Home";
 
 const routes = createBrowserRouter([
     {

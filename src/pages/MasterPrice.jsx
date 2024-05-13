@@ -8,12 +8,12 @@ import Checkbox from "../components/UI/Checkbox/Checkbox";
 import RadioButton from "../components/UI/RadioButton/RadioButton";
 import Table from "../components/UI/Table/Table";
 import Data from '../data/data.json'
+import Container from "../components/Container/Container";
 
 const MasterPrice = () => {
     const [activeButton, setActiveButton] = useState('oneWay');
     const { register, handleSubmit, reset } = useForm()
     const [data, setData] = useState({})
-    console.log(data)
     const onSubmit = (data) => {
         console.log(data)
         setData(Data)
@@ -21,7 +21,7 @@ const MasterPrice = () => {
     }
 
     return (
-        <>
+        <Container>
             {/* Package button family */}
             <div className="flex justify-center my-3">
                 <Button onClick={() => setActiveButton('roundTrip')} className={`border-r-0 rounded-r-none ${activeButton === 'roundTrip' ? '!bg-blue-900 !text-white' : ''}`} label={'Round Trip'} />
@@ -76,7 +76,7 @@ const MasterPrice = () => {
             <div className="relative mb-8 overflow-x-auto">
                 <Table itinerary={data} />
             </div>
-        </>
+        </Container>
 
     );
 };
