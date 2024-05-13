@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { Suspense, lazy, useState } from "react";
 import Button from "../components/UI/Button/Button";
 import Hr from "../components/UI/Hr/Hr";
 import CustomInput from "../components/UI/CustomInput/CustomInput";
@@ -6,9 +6,10 @@ import CustomSelect from "../components/UI/CustomSelect/CustomSelect";
 import { useForm } from "react-hook-form";
 import Checkbox from "../components/UI/Checkbox/Checkbox";
 import RadioButton from "../components/UI/RadioButton/RadioButton";
-import Table from "../components/UI/Table/Table";
+const Table = lazy(() => import("../components/UI/Table/Table"))
 import Data from '../data/data.json'
 import Container from "../components/Container/Container";
+import GlobalLoader from "../components/Shared/Loader/GlobalLoader";
 
 const MasterPrice = () => {
     const [activeButton, setActiveButton] = useState('oneWay');
@@ -74,7 +75,7 @@ const MasterPrice = () => {
                 <Hr />
             </form>
             <div className="relative mb-8 overflow-x-auto">
-                <Table itinerary={data} />
+                <Suspense fallback={<GlobalLoader />}><Table itinerary={data} /></Suspense>
             </div>
         </Container>
 
