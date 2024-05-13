@@ -70,7 +70,7 @@ const Home = ({ className }) => {
 
             </div>
 
-            <div className="lg:z-10  w-full my-8 lg:my-0 rounded-[20px] lg:transform lg:-translate-y-1/2">
+            <div className="lg:z-10  w-full my-8 lg:my-0 rounded-[20px] lg:transform lg:-translate-y-[35%]">
                 <PackageOption />
             </div>
         </Container>
