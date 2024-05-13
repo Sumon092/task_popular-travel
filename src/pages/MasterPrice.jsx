@@ -23,6 +23,10 @@ const MasterPrice = () => {
 
     return (
         <Container>
+            <div className=''>
+                <p className="text-start my-2 font-roboto font-bold text-3xl text-black">{'Master Price'}</p>
+                <Hr className="!border-t-gray-500" />
+            </div>
             {/* Package button family */}
             <div className="flex justify-center my-3">
                 <Button onClick={() => setActiveButton('roundTrip')} className={`border-r-0 rounded-r-none ${activeButton === 'roundTrip' ? '!bg-blue-900 !text-white' : ''}`} label={'Round Trip'} />
@@ -35,7 +39,7 @@ const MasterPrice = () => {
             <Hr />
 
             <form onSubmit={handleSubmit(onSubmit)}>
-                <div className="flex flex-col md:flex-row gap-2 items-center my-1">
+                <div className="flex flex-col md:flex-row gap-2 items-center my-3">
                     <CustomInput fieldName='from' register={register} placeholder="LHR" />
                     <CustomInput fieldName='to' register={register} placeholder="CDG" />
                     <CustomInput fieldName='time' register={register} type="datetime-local" />
@@ -58,11 +62,11 @@ const MasterPrice = () => {
                     <span className="text-xl font-medium">+</span>
                 </div>
                 <Hr />
-                <div className="flex flex-col md:flex-row justify-between items-center my-2">
+                <div className="flex md:flex-row justify-between items-center my-2">
                     <div>
                         <Checkbox label={'Extra options'} type='checkbox' register={register} fieldName={'extOptions'} />
                     </div>
-                    <div className="flex flex-col md:flex-row gap-2">
+                    <div className="flex md:flex-row gap-2">
                         <p className="text-md text-gray-600">Environment</p>
                         <RadioButton label={'Dummy'} type='radio' register={register} fieldName={'dummy'} />
                         <RadioButton label={'PDT'} type='radio' register={register} fieldName={'pdt'} />

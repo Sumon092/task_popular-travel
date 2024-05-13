@@ -32,7 +32,7 @@ const parallax = {
 const Home = ({ className }) => {
     return (
         <Container className={twMerge(
-            'xl:px-0 h-[80vh] max-w-full',
+            'xl:px-0 px-0 h-[80vh] max-w-full mb-24',
             className
         )}>
             <div style={{ background: `url(${Background})`, backgroundRepeat: "no-repeat", backgroundSize: 'cover' }} className="h-full w-full">

@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Bell, CircleUser, MenuIcon, XIcon } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
-import Hr from '../UI/Hr/Hr';
 
 const NavBar = () => {
     const [open, setOpen] = useState(false);
@@ -24,8 +23,8 @@ const NavBar = () => {
 
     return (
         <>
-            <nav className='bg-primary h-14 md:h-16 flex justify-start items-center sticky'>
-                <div onClick={() => setOpen(!open)} className='w-16 h-16 md:hidden text-white flex items-center ml-3'>
+            <nav className='bg-primary/5 backdrop-blur-lg h-14 md:h-16 w-full shadow-md'>
+                <div onClick={() => setOpen(!open)} className='w-16 h-16 md:hidden text-primary font-bold flex items-center ml-3'>
                     {open ? <XIcon /> : <MenuIcon />}
                 </div>
 
@@ -46,7 +45,7 @@ const NavBar = () => {
                             <li className='mr-4 py-1 md:py-0' key={route.id}>
                                 <Link
                                     to={route.link}
-                                    className={`text-white rounded-full px-3 py-1 ${location.pathname === route.link ? 'rounded-full' : ''}`}
+                                    className={`text-white  rounded-full px-3 py-1 ${location.pathname === route.link ? 'rounded-full' : ''}`}
                                     onClick={() => handleSetActiveRoute(route.name)}
                                 >
                                     {route.name}
@@ -58,12 +57,10 @@ const NavBar = () => {
 
 
             </nav>
-            {activeRouteName === 'Master Price' || activeRouteName === 'Custom Price' ? (
-                <div>
-                    <p className="text-center my-2 font-roboto font-bold text-2xl text-black">{activeRouteName || 'Master Price'}</p>
-                    <Hr className="!border-t-gray-500" />
-                </div>
-            ) : null}
+
+
+
+
         </>
     );
 };

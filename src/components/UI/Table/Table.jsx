@@ -17,7 +17,7 @@ const Table = ({ itinerary }) => {
   });
 
   return (
-    <div className='my-8'>
+    <div className='my-8 z-50'>
       <table className="flight-table">
         <thead>
           <tr>
