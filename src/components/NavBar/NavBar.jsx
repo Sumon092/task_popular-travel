@@ -13,8 +13,8 @@ const NavBar = () => {
         { name: 'Custom Price', id: 2, link: '/custom-price' },
         { name: 'Calender', id: 3, link: '/calender' },
         { name: 'Reports', id: 4, link: '/reports' },
-        { name: <Bell />, id: 5, link: '/notification' },
-        { name: <CircleUser />, id: 6, link: '/profile' },
+        { name: <Bell />, id: 5, link: '' },
+        { name: <CircleUser />, id: 6, link: '' },
     ];
 
     const handleSetActiveRoute = (routeName) => {

@@ -10,6 +10,7 @@ const Table = lazy(() => import("../components/UI/Table/Table"))
 import Data from '../data/data.json'
 import Container from "../components/Container/Container";
 import GlobalLoader from "../components/Shared/Loader/GlobalLoader";
+import Footer from "../components/Footer/Footer";
 
 const MasterPrice = () => {
     const [activeButton, setActiveButton] = useState('oneWay');
@@ -83,6 +84,7 @@ const MasterPrice = () => {
                     <Suspense fallback={<GlobalLoader />}><Table itinerary={data} /></Suspense>
                 </div>
             </Container>
+            <Footer />
         </>
 
 
