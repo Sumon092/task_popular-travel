@@ -16,6 +16,10 @@ const MasterPrice = () => {
     const [activeButton, setActiveButton] = useState('oneWay');
     const { register, handleSubmit, reset } = useForm()
     const [data, setData] = useState({})
+    // eslint-disable-next-line no-unused-vars
+    const [selectedDate, setSelectedDate] = useState(new Date());
+
+
     const onSubmit = (data) => {
         console.log(data)
         setData(Data)
@@ -44,22 +48,37 @@ const MasterPrice = () => {
                     <div className="flex flex-col md:flex-row gap-2 items-center my-3">
                         <CustomInput fieldName='from' register={register} placeholder="LHR" />
                         <CustomInput fieldName='to' register={register} placeholder="CDG" />
-                        <CustomInput fieldName='time' register={register} type="datetime-local" />
-                        <CustomSelect register={register} fieldName="dIncrease" options={[
-                            { label: 'Day -', value: 'day-' }
+                        <CustomInput
+                            fieldName='time'
+                            register={register}
+                            type="datetime-local"
+                            value={selectedDate.toISOString()}
+                        />
+                        <CustomSelect register={register} fieldName="increase" options={[
+                            { label: 'Day +', value: 'day+' },
+                            { label: '1 day', value: '1' },
+                            { label: '2 days', value: '2' },
+                            { label: '3 days', value: '3' },
                         ]} />
-                        <CustomSelect className='w-full' register={register} fieldName="dDecrease" options={[
-                            { label: 'Day +', value: 'day+' }
+                        <CustomSelect className='w-full' register={register} fieldName="decrease" options={[
+                            { label: 'Day -', value: 'day-' },
+                            { label: '1 day', value: '1' },
+                            { label: '2 days', value: '2' },
+                            { label: '3 days', value: '3' },
                         ]} />
+
                         <CustomSelect className='md:!w-32' register={register} fieldName="anyTime" options={[
                             { label: 'Any Time', value: 'anyTime' }
                         ]} />
                         <span className="text-xl font-medium">+</span>
                         <CustomSelect register={register} fieldName="person" options={[
-                            { label: 'ADT', value: 'person' }
+                            { label: 'ADT', value: 'ADT' },
+                            { label: 'CHD', value: 'CHD' },
                         ]} />
                         <CustomSelect register={register} fieldName="number" options={[
-                            { label: '1', value: '1' }
+                            { label: '1', value: '1' },
+                            { label: '2', value: '2' },
+                            { label: '3', value: '3' },
                         ]} />
                         <span className="text-xl font-medium">+</span>
                     </div>
