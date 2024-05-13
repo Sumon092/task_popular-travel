@@ -1,4 +1,4 @@
-### project live link : [popular_travel](https://popular-travel.netlify.app/)
+## Project live link : [popular_travel](https://popular-travel.netlify.app/)
 
 1.
 
